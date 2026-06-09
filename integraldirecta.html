@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Integral Directa</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+padding:20px;
+
+background:#e8ffe8;
+
+}
+
+.caja{
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+input,button{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+}
+
+button{
+
+background:#28a745;
+
+color:white;
+
+border:none;
+
+}
+
+#resultado{
+
+margin-top:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h1>Calculadora de Integrales Directas</h1>
+
+<p>Escribe el exponente de x.</p>
+
+<input id="numero" placeholder="Ejemplo: 3">
+
+<button onclick="calcularIntegral()">
+
+Resolver
+
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcularIntegral(){
+
+let n = parseInt(document.getElementById("numero").value);
+
+if(isNaN(n)){
+
+document.getElementById("resultado").innerHTML =
+
+"Escribe un número";
+
+return;
+
+}
+
+let nuevoExp = n + 1;
+
+let coef = "1/" + nuevoExp;
+
+document.getElementById("resultado").innerHTML =
+
+"∫x^" + n + " dx = (" +
+
+coef + ")x^" +
+
+nuevoExp +
+
+" + C";
+
+}
+
+</script>
+
+</body>
+
+</html>
